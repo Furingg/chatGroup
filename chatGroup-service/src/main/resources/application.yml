@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://10.21.23.66:3306/chat_group?characterEncoding=UTF-8
+      username: root
+      password: 123456
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 60000
+  redis:
+    database: 14
+    host: 10.21.23.66
+    port: 6379
+    password: 2021gdut
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+#redis配置文件 /home/dj/redis
+#mysql配置文件 /usr/local/docker_data/mysql

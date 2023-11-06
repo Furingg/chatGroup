@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.furing.chatgroupservice.mapper.UserMapper">
+
+    <resultMap id="userMap" type="com.furing.chatgroupservice.entity.po.User">
+        <id column="uid" property="userId"/>
+        <result column="user_name" property="userName"/>
+        <result column="account" property="account"/>
+        <result column="creat_time" property="creatTime"/>
+        <result column="password" property="password"/>
+    </resultMap>
+
+    <insert id="registerUser" useGeneratedKeys="true" keyProperty="userId">
+        insert into t_user (user_name, account, creat_time, password)
+        values (#{userName}, #{account}, #{creatTime}, #{password})
+    </insert>
+
+    <select id="selectUserByAccount" resultMap="userMap">
+        select *
+        from t_user
+        where account = #{account}
+    </select>
+
+</mapper>
